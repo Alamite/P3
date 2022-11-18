@@ -1,0 +1,103 @@
+<html>
+<title>TRIPPER-Service</title>
+<link rel='stylesheet' href="style.css">
+<body style="background-color:black;">
+	<div class="navbar">
+		<h1 class="logo">Roadmaster</h1>
+			<ul class="nav">
+				<li><a href="home.html" class="hoverlink">Home</a></li>
+				<li><a href="rides.html" class="hoverlink">Rides</a></li>
+				<li><a href="service.html" class="hoverlink">Service</a></li>
+				<li><a href="about.html" class="hoverlink">About Us</a></li>
+				<li><a href="contact.html" class="hoverlink">Contact Us</a></li>
+				<li><a href="lab3.xml" class="hoverlink">XML</a></li>
+			</ul>
+	</div>
+    <div>
+	    <img src="service.jpg" style="right: 0; bottom: 0;width: 100%;margin-top: -250px;height:1030;">
+
+        <div style ="position: absolute;
+		text-align: left;
+		bottom: -0;
+		background: rgba(0, 0, 0, 0.5);
+		color: #f1f1f1;
+		width: 98.65%;
+		padding-left: 20px;">
+	
+	<h1>Book a <span style="color: yellow;">Service</span></h1>
+	<p>Find your nearest service center<button class= 'btn' onclick="getLocation()">Detect my location</button>
+	
+	<div id="loc"></div>
+	</div>
+</div>
+<div class='content' style="padding-top:20px; width:100%; height: 100px;">
+	<div style="color: white; float: left; padding-top: 270px; padding-left: 45px;">
+		<h1>Service booking</h1>
+		Make an appointment for Roadmaster service from the safety and comfort of your home.
+	</div>
+	<div>
+	<form>
+		<div class="elem-group">
+		  <label for="name">Your Name</label>
+		  <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} required>
+		</div>
+		<div class="elem-group">
+		  <label for="email">Your E-mail</label>
+		  <input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com" required>
+		</div>
+		<div class="elem-group">
+		  <label for="phone">Your Phone</label>
+		  <input type="tel" id="phone" name="visitor_phone" placeholder="498-348-3872" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+		</div>
+		<div class="elem-group">
+		  <label for="room-selection">Select State</label>
+		  <select id="room-selection" name="room_preference" required>
+			  <option value="">State</option>
+			  <option value="KA">Karnataka</option>
+			  <option value="KL">Kerala</option>
+			  <option value="TN">Tamil Nadu</option>
+		  </select>
+		</div>
+		<div class="elem-group">
+			<label for="checkout-date">Date</label>
+			<input type="date">
+		  </div>
+		<div class="elem-group">
+		  <label for="message">Explain your issue with the bike</label>
+		  <textarea rows="5" cols="40" placeholder="Tell us anything that might be important." required></textarea>
+			<br><br>
+		  <button class="btn" type="submit">Submit</button>
+		</div>
+	  </form>
+	</div>
+	<br>
+	<br>
+	<img src="map.png" width="1000" height="1106"
+	alt="World Map" usemap="#worldmap">
+        <map name="worldmap">
+            <area shape="rect" coords="404, 872, 442, 918" alt="Chennai"
+				    href="https://www.motomecha.com/">
+
+            <area shape="rect" coords="372, 686, 396, 726" alt="Hyderabad"
+				href="https://i-k-bike-service-centre.business.site/?utm_source=gmb&utm_medium=referral">
+        </map>
+    </div>
+</center>
+<script>
+	var x = document.getElementById("loc");
+	function getLocation() { 
+	  if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition);
+	  } else {
+		x.innerHTML = "Geolocation is not supported by this browser.";
+	  }
+	}
+	
+	function showPosition(position) {
+
+	  x.innerHTML = "Latitude: " + position.coords.latitude +
+	  "<br>Longitude: " + position.coords.longitude;
+	}
+	</script>
+</body>
+</html>
